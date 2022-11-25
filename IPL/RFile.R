@@ -1,0 +1,57 @@
+install.packages("tidyr")
+df=read.csv("E:\\TabIPL PROJECT\\IPL\\IPL Matches 2008-2020.csv")
+ncol(df)
+df[1]
+df1=df[1:10]
+df1
+v<-c(1,11:17)
+df2=df[v]
+df2
+# Removing NA values
+
+library("tidyr")
+sum(is.na(df1))
+df1 <- df1%>%drop_na()
+sum(is.na(df1))
+# Removing NA values
+
+library("tidyr")
+sum(is.na(df2))
+df2 <- df2%>%drop_na()
+sum(is.na(df2))
+# Removing Blank Values from df1 and df2
+
+dfFinal <- dfFinal[-which(df1$city == ""), ]
+dfFinal <- dfFinal[-which(df2$eliminator == ""), ]
+
+write.csv(df1,"E:\\TabIPL PROJECT\\IPL\\Matches1.csv", row.names = FALSE)
+write.csv(df2,"E:\\TabIPL PROJECT\\IPL\\Matches2.csv", row.names = FALSE)
+dd=read.csv("E:\\TabIPL PROJECT\\IPL\\IPL Ball-by-Ball 2008-2020.csv")
+ncol(dd)
+df3=dd[1:10]
+b<-c(1,5,7,11:18)
+df3
+df4=dd[b]
+df4
+# Removing NA values
+
+library("tidyr")
+sum(is.na(df3))
+df3 <- df3%>%drop_na()
+sum(is.na(df3))
+# Removing NA values
+
+library("tidyr")
+sum(is.na(df4))
+df4 <- df4%>%drop_na()
+sum(is.na(df4))
+# Removing Blank Values from df3 and df4
+
+dfFinal <- dfFinal[-which(df3$non_striker == ""), ]
+dfFinal <- dfFinal[-which(df4$fielder == ""), ]
+
+
+write.csv(df3,"E:\\TabIPL PROJECT\\IPL\\Balls1.csv", row.names = FALSE)
+write.csv(df4,"E:\\TabIPL PROJECT\\IPL\\Balls2.csv", row.names = FALSE)
+df3
+df4
